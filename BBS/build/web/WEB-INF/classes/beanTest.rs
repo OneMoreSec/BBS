@@ -1,0 +1,1 @@
+com.bbs.beanTest

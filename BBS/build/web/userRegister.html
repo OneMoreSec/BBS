@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>用户注册</title>
+        <script type="text/javascript">
+            function submitOnClick(){
+                var userName = document.getElementById("userName");
+                var btn = document.getElementById("reg");
+                if(userName.value==""){
+                    document.getElementById("tip1").innerHTML = "*用户名不能为空!";
+                    return;
+                }
+                var pswd1 = document.getElementById("pswd1");
+                if(pswd1.value==""){
+                    document.getElementById("tip2").innerHTML="*请输入密码!";
+                    return;
+                }
+                var pswd2 = document.getElementById("pswd2");
+                if(pswd2.value==""){
+                    document.getElementById("tip3").innerHTML="*请输入密码!"; 
+                    return;
+                }
+                if(pswd1.value!=pswd2.value){
+                    document.getElementById("tip3").innerHTML="*请输入相同的密码!";
+                    return;
+                }
+                var email = document.getElementById("email");
+                if(email.value==""){
+                    document.getElementById("tip4").innerHTML="*请输入邮箱!";
+                    return;
+                }
+                document.forms["frm"].submit();
+            }
+        </script>
+    </head>
+    <body>
+        <form name="frm" action="register.jsp" method ="post">
+            用户名：<input id="userName" type="text" name="userName" placeholder="请输入用户名"/><span id="tip1"></span><br>
+            密码：<input id="pswd1" type="password" name = "password" placeholder="请输入密码"/><span id="tip2"></span><br>
+            再次确认密码：<input id="pswd2" type="password" name="password2" placeholder="请再次输入密码"/><span id="tip3"></span><br>
+            邮箱：<input type ="email" id="email" name="email" placeholder="请输入邮箱"/><span id="tip4"></span><br>
+            <button type="button" id="reg" value="reg" onclick="submitOnClick()" >注册</button>
+        </form>        
+        <script type="text/javascript">
+
+        </script>
+    </body>
+    
+</html>
